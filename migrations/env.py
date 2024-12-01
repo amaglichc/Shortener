@@ -7,6 +7,7 @@ from alembic import context
 
 
 from DB.core import Base
+from DB.ORMs.UrlOrm import ShortenedURLOrm  # noqa
 from config import config as cf
 
 # this is the Alembic Config object, which provides
@@ -25,11 +26,6 @@ if config.config_file_name is not None:
 target_metadata = Base.metadata
 
 config.set_main_option("sqlalchemy.url", cf.DB_URL + "?async_fallback=True")
-# other values from the config, defined by the needs of env.py,
-# can be acquired:
-# my_important_option = config.get_main_option("my_important_option")
-# ... etc.
-
 
 def run_migrations_offline() -> None:
     """Run migrations in 'offline' mode.

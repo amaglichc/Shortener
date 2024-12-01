@@ -1,0 +1,36 @@
+services:
+
+  shortener:
+    container_name: shortener_app
+    command: >
+      sh -c "
+        sleep 5;
+        alembic upgrade head &&
+        uvicorn main:app --host 0.0.0.0 --port 8081"
+    user: root
+    build: ./
+    restart: always
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - 8081:8081
+    env_file:
+      - .env
+
+  postgres:
+    container_name: shortener_postgres
+    image: postgres
+    environment:
+      - POSTGRES_DB=shortener
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    env_file:
+      - .env
+    user: root
+    restart: always

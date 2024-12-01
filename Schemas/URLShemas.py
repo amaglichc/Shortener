@@ -7,4 +7,4 @@ class ShortenedURLSchema(BaseModel):
     url: str
     shortened_url: str
     created_at: datetime
-    expired_at: datetime
+    expires_at: datetime

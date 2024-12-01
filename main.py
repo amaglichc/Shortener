@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from Schemas import ShortenedURLSchema
+from Schemas.URLShemas import ShortenedURLSchema
 from DB.Repos.URLRepository import create_url
 
 app = FastAPI(title="Shortener")
