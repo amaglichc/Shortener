@@ -4,7 +4,7 @@ services:
     container_name: shortener_app
     command: >
       sh -c "
-        sleep 3;
+        sleep 2;
         alembic upgrade head &&
         uvicorn main:app --host 0.0.0.0 --port 8081"
     user: root

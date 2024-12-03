@@ -12,3 +12,4 @@ class Config(BaseModel):
 
 
 config = Config()
+print(config.DB_URL)
