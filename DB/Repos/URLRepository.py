@@ -2,7 +2,7 @@ from datetime import datetime, timezone, timedelta
 from uuid import uuid4
 from DB.core import session_maker
 from DB.ORMs.UrlOrm import ShortenedURLOrm
-from Schemas.URLShemas import ShortenedURLSchema
+from Schemas.URLSchemas import ShortenedURLSchema
 from sqlalchemy import select
 from config import config
 from fastapi import HTTPException, status

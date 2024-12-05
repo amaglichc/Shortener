@@ -1,14 +1,9 @@
-from os import getenv
-from pydantic import BaseModel
-from dotenv import load_dotenv
+from pydantic_settings import BaseSettings
 
 
-load_dotenv()
-
-
-class Config(BaseModel):
-    DB_URL: str = getenv("DB_URL")
-    DOMAIN: str = getenv("DOMAIN")
+class Config(BaseSettings):
+    DB_URL: str
+    DOMAIN: str
 
 
 config = Config()

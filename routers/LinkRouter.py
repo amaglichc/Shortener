@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from fastapi.responses import RedirectResponse
-from Schemas.URLShemas import ShortenedURLSchema, UrlToShortSchema
+from Schemas.URLSchemas import ShortenedURLSchema, UrlToShortSchema
 from DB.Repos.URLRepository import create_url, get_url
 
 router = APIRouter(tags=["Links"])

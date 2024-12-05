@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field, EmailStr
 from datetime import datetime
-from Schemas.URLShemas import ShortenedURLSchema
+from Schemas.URLSchemas import ShortenedURLSchema
 
 
 class SignUpSchema(BaseModel):
